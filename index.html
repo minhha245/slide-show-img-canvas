@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LeLeNa</title>
-    <link rel="shortcut icon" href="/img/img1.jpg" type="image/x-icon">
+    <title>Halm</title>
+    <link rel="shortcut icon" href="./img/img1.jpg" type="image/x-icon">
     <link rel="stylesheet" href="main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,9 +31,28 @@
 <div id="canva">
     <canvas id="canvas"></canvas>
 </div>
-<audio autoplay loop>
-    <source src="music.mp3">
+<button id="play" style="background-color: white; width: 35px; height: 25px;
+    color: forestgreen; position: absolute; top:5px; left: 2px;" onclick="toggleAudio()">
+    <img width="16" height="16" src="./img/volume-low-solid.svg"></button>
+<audio id="musicplayer" autoplay loop>
+    <source src="./mp3/music.mp3">
 </audio>
+<script>
+    function toggleAudio() {
+        var audio = document.getElementById('musicplayer');
+        var button = document.getElementById('play');
+
+        if (audio.paused) {
+            audio.play();
+            button.style.color = 'forestgreen';
+        } else {
+            audio.pause();
+            button.style.color = 'red';
+        }
+    }
+</script>
+
 <script src="main.js"></script>
+
 </body>
 </html>
