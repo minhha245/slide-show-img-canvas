@@ -33,7 +33,7 @@
 </div>
 <button id="play" style="background-color: white; width: 35px; height: 25px;
     color: forestgreen; position: absolute; top:10px; left: 47%;" onclick="toggleAudio()">
-    <img width="16" height="16" src="./img/volume.jpg" alt=""></button>
+    <img id="volumeIcon" width="16" height="16" src="./img/mute.jpg" alt=""></button>
 <audio id="musicplayer" autoplay loop>
     <source src="./mp3/music.mp3">
 </audio>
@@ -41,13 +41,16 @@
     function toggleAudio() {
         var audio = document.getElementById('musicplayer');
         var button = document.getElementById('play');
+        var volumeIcon = document.getElementById('volumeIcon');
 
         if (audio.paused) {
             audio.play();
             button.style.color = 'forestgreen';
+            volumeIcon.src = './img/volume.jpg';
         } else {
             audio.pause();
             button.style.color = 'red';
+            volumeIcon.src = './img/mute.jpg';
         }
     }
 </script>
